@@ -19,9 +19,11 @@ class Filter {
 	{	
 		/*	
 		* @PARAM array $filters contains keys, operators and values
-		* - See $this->validateFilters() for examples
+		* Expects $filters[] = array('key' => 'key', 'operator' => 'operator', 'value' => 'value')
+		* See $this->validateFilters() for examples
+		*
 		* @PARAM array $data data that needs to be filtered
-		* - For now only the top level will be filtered
+		* For now only the top level will be filtered
 		*/
 		
 		$this->filters = $this->validateFilters($filters);
@@ -33,10 +35,10 @@ class Filter {
 	{
 		/*
 		* @PARAM array $filters examples
-		* array('key' => 'price', 'value' => 100, 'operator' => '>');
-		* array('key' => 'price', 'value' => 200, 'operator' => '<=');
-		* array('key' => 'location', 'value' => 'Amsterdam', 'operator' => '=');
-		* array('key' => 'category', 'value' => ['Music', 'Festival'], 'operator' => 'in');
+		* array('key' => 'price', 'operator' => '>', 'value' => 100);
+		* array('key' => 'price', 'operator' => '<=', 'value' => 200);
+		* array('key' => 'location', 'operator' => '=', 'value' => 'Amsterdam');
+		* array('key' => 'category', 'operator' => 'in', 'value' => ['Music', 'Festival']);
 		*/
 
 		$validator = new FilterValidator($filters);
