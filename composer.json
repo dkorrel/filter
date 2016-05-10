@@ -1,0 +1,19 @@
+{
+	"name": "cjp/filter",
+	"description": "Custom data filter.",
+	"authors": [
+		{
+			"name": "Daniel Korrel",
+			"email": "dkorrel@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Filter\\": "src/"
+		}
+	},
+	"require": {
+		"illuminate/support": "5.*"
+	},
+	"minimum-stability": "dev"
+}
